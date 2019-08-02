@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sự kiện bàn phím</title>
+</head>
+<body>
+    <img src="anh1.png" id="heart" style="position: absolute; top:0; left:0" width="200px" height="200px">
+    <script> 
+        let element=document.getElementById("heart");
+        function upArrowPressed(){
+            element.style.top = parseInt(element.style.top) - 5 + 'px';
+        }
+        function downArrowPressed(){
+            element.style.top = parseInt(element.style.top) + 5 + 'px';
+        }
+        function leftArrowPressed(){
+            element.style.left = parseInt(element.style.top) - 5 + 'px';
+        }
+        function rightArrowPressed(){
+            element.style.left = parseInt(element.style.top) + 5 + 'px';
+        }
+    </script>
+
+</body>
+</html>

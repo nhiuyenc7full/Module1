@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bài tập 3: Ứng dụng máy tính</title>
+</head>
+<body>
+    <h2>Caculator</h2>
+    <form>
+        <input type="text" id="soA" value="">
+        <input type="text" id="soB" value=""> <br> <br>
+
+        <input type="button" value= "Addition(+)" onclick="calculation(1)">
+        <input type="button" value="Subtraction(-)" onclick="calculation(2)">
+        <input type="button" value="Multiplication(X)" onclick="calculation(3)">
+        <input type="button" value="Division(/)" onclick="calculation(4)">
+        <p id="kq"></p>
+        </form>
+    <script>
+        let result;
+        let message = "";
+        function calculation(id){
+            let soA= +document.getElementById('soA').value;
+            let soB= +document.getElementById('soB').value;
+            
+            if(id == 1){
+                result = soA + soB;
+                message = 'Result addition ' + ' ' + result;
+            }
+            if(id == 2){
+                result = soA - soB;
+                message = 'Result subtraction ' + ' ' + result;
+            }
+            if(id == 3){
+                result = soA * soB;
+                message = 'Result multiplication ' + ' ' + result;
+            }
+            if(id == 4){
+                result = soA / soB;
+                message = 'Result division ' + ' ' + result;
+            }
+
+            document.getElementById("kq").innerHTML = message;
+        }
+    </script>
+</body>
+</html>

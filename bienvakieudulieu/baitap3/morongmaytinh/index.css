@@ -1,0 +1,31 @@
+#btn1 {
+    background-color: grey;
+    height: 40px;
+    width: 70px;
+}
+#btn2 {
+    height: 40px;
+    width: 70px;
+}
+#btn3 {
+    height: 40px;
+    width: 70px;
+    background-color: lightblue;
+}
+#kq {
+    height: 50px;
+    width: 100%;
+    text-align: right;
+    font-size: 160%;
+}
+table {
+    border: 1px solid grey;
+    padding:5px;
+    border-radius: 5px;
+    background-color: lightyellow;
+}
+#btn4 {
+    background-color: grey;
+    height: 40px;
+    width: 150px;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ứng dụng máy tính mở rộng</title>
+    <link rel="stylesheet" href="suadoi.css">
+</head>
+<body>
+    <table>
+        <tr><td  colspan="7"><input id="kq" type="text">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><input id="btn4" type="button" value="Rad" onclick="kq.value+=this.value"></td>
+            <td><input id="btn1" type="button" value="x!" onclick="kq.value+=this.value"></td>
+            <td><input id="btn1" type="button" value="(" onclick="kq.value+=this.value"></td>
+            <td><input id="btn1" type="button" value=")" onclick="kq.value+=this.value"></td>
+            <td><input id="btn1" type="button" value="%" onclick="kq.value+=this.value"></td>
+            <td><input id="btn1" type="button" value="AC" onclick="kq.value=''"></td>
+        </tr>
+        <tr>
+            <td><input id="btn1" type="button" value="Inv" onclick="kq.value+=this.value"></td>
+            <td><input id="btn1" type="button" value="sin" onclick="kq.value+=this.value"></td>
+            <td><input id="btn1" type="button" value="In" onclick="kq.value+=this.value"></td>
+            <td><input id="btn2" type="button" value="7" onclick="kq.value+=this.value"></td>
+            <td><input id="btn2" type="button" value="8" onclick="kq.value+=this.value"></td>
+            <td><input id="btn2" type="button" value="9" onclick="kq.value+=this.value"></td>
+            <td><input id="btn1" type="button" value="/" onclick="kq.value+=this.value"></td>
+        </tr>
+        <tr>
+            <td><input id="btn1" type="button" value="π" onclick="kq.value+=this.value"></td>
+            <td><input id="btn1" type="button" value="cos" onclick="kq.value+=this.value"></td>
+            <td><input id="btn1" type="button" value="log" onclick="kq.value+=this.value"></td>
+            <td><input id="btn2" type="button" value="4" onclick="kq.value+=this.value"></td>
+            <td><input id="btn2" type="button" value="5" onclick="kq.value+=this.value"></td>
+            <td><input id="btn2" type="button" value="6" onclick="kq.value+=this.value"></td>
+            <td><input id="btn1" type="button" value="*" onclick="kq.value+=this.value"></td>
+        </tr>
+        <tr>
+            <td><input id="btn1" type="button" value="e" onclick="kq.value+=this.value"></td>
+            <td><input id="btn1" type="button" value="tan" onclick="kq.value+=this.value"></td>
+            <td><input id="btn1" type="button" value="√" onclick="kq.value+=this.value"></td>
+            <td><input id="btn2" type="button" value="1" onclick="kq.value+=this.value"></td>
+            <td><input id="btn2" type="button" value="2" onclick="kq.value+=this.value"></td>
+            <td><input id="btn2" type="button" value="3" onclick="kq.value+=this.value"></td>
+            <td><input id="btn1" type="button" value="-" onclick="kq.value+=this.value"></td>
+        </tr>
+        <tr>
+            <td><input id="btn1" type="button" value="Ans" onclick="kq.value+=this.value"></td>
+            <td><input id="btn1" type="button" value="EXP" onclick="kq.value+=this.value"></td>
+            <td><input id="btn1" type="button" value="x^y" onclick="kq.value+=this.value"></td>
+            <td><input id="btn2" type="button" value="0" onclick="kq.value+=this.value"></td>
+            <td><input id="btn2" type="button" value="." onclick="kq.value+=this.value"></td>
+            <td><input id="btn3" type="button" value="=" onclick="kq.value = eval(kq.value)"></td>
+            <td><input id="btn1" type="button" value="+" onclick="kq.value+=this.value"></td>
+        </tr>
+    </table>
+</body>
+</html>

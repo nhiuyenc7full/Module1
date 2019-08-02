@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bài tập 2: chuyển đổi tiền tệ</title>
+    <link rel="stylesheet" href="bt.css"/>
+</head>
+<body>
+    <form>
+            <table>
+                <tr>
+                    <th>Amount</th>
+                    <th>From Currency</th>
+                    <th>To Currency</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" id="amount" value="">
+                    </td>
+                    <td>
+                        <select id="fromId" name= "From Currency">
+                            <option value="USD">USD</option>
+                            <option value="VND">VND</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="toId" name= "To Currency">
+                            <option value="USD">USD</option>
+                            <option value="VND">VND</option>
+                        </select>
+                    </td>
+                    <td>
+                        <button type="button" onclick="convert1()">Convert</button>
+                    </td>
+                </tr>
+            </table>
+            <p id="kq" style="color:blue"></p>
+    </form>
+
+        <script src="bt.js">
+        </script>
+        
+</body>
+</html>

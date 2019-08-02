@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kiểm tra đăng nhập</title>
+</head>
+<body>
+    <script>
+        let userName = prompt("Who's there?", '');
+
+        if (userName == 'admin') {
+            alert('Welcome!')
+        } else if (userName == null) {
+            alert('Canceled');
+        }    else {
+            alert("I don't know you");
+        }
+        let pass = prompt('Password?', '');
+        if (pass == 'themaster') {
+            alert('Welcome!');
+        } else if (pass == null) {
+            alert('Canceled.');
+        } else {
+            alert('Wrong password');
+        }
+    </script>
+</body>
+</html>

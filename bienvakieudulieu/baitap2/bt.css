@@ -1,0 +1,26 @@
+button {
+    width: 90px;
+    height: 40px;
+    font-size: 110%;
+    background-color: blueviolet;
+    border-radius: 10px;
+}
+table{
+    border-collapse: collapse;
+}
+tr {
+    border: 0px solid black;
+    padding: 8x 10px;
+    height: 10px;
+}
+select{
+    padding:5px;
+    width: 100px;
+}
+td, th {
+     width: 200px;
+     text-align: center;
+}
+input {
+    height: 23px;
+}
