@@ -8,31 +8,71 @@
     <style>
         img {
             padding: 5px;
+            
         }
     </style>
 </head>
-<body>
+<body id="complete">
     
-    <img src="soc2.jpg" alt="img1" id="anh1" onclick="change(1);">
-    <img src="soc3.jpg" alt="img2" id="anh2" onclick="change(2);">
-    <img src="soc2.jpg" alt="img3" id="anh3" onclick="change(3);">
+    <img src="soc2.jpg" alt="img1" id="anh1" onclick="change1()">
+    <img src="soc3.jpg" alt="img2" id="anh2" onclick="change2()">
+    <img src="soc2.jpg" alt="img3" id="anh3" onclick="change3()">
     <script>
-        function change(2) {
-            let image = Math.floor(Math.random() *3) + 1;
+
+        let img1=document.getElementById("anh1");
+        let img2=document.getElementById("anh2");
+        let img3=document.getElementById("anh3");
+
+        function change1() {
+            let image = Math.floor((Math.random() *3) + 1);
             switch (image) {
                 case 1:
-                    HTMLImageElement.src= "soc1.jpg";
+                    img1.src= "soc1.jpg"
                     break;
                 case 2: 
-                    HTMLImageElement.src=="soc2.jpg";
+                    img1.src="soc2.jpg"
                     break;
                 case 3:
-                    HTMLImageElement.src=="soc3.jpg";
+                    img1.src="soc3.jpg"
                     break;
             }
-
+            complete()
+        }        
+        function change2() {
+            let image = Math.floor((Math.random() *3) + 1);
+            switch (image) {
+                case 1:
+                    img2.src= "soc1.jpg"
+                    break;
+                case 2: 
+                    img2.src="soc2.jpg"
+                    break;
+                case 3:
+                    img2.src="soc3.jpg"
+                    break;
+            }
+            complete()
         }
-        
+        function change3() {
+            let image = Math.floor((Math.random() *3) + 1);
+            switch (image) {
+                case 1:
+                    img3.src= "soc1.jpg"
+                    break;
+                case 2: 
+                    img3.src="soc2.jpg"
+                    break;
+                case 3:
+                    img3.src="soc3.jpg"
+                    break;
+            }
+            complete()
+        }
+        function complete() {
+            if (img1.src === "soc1.jpg" && img2.src === "soc2.jpg" && img3.src === "soc3.jpg") {
+            document.getElementById("complete").style = 'background-color: green'
+        }
+        }
     </script>
 </body>
 </html>
