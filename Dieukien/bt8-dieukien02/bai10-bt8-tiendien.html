@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tính giá điện tiêu thụ</title>
+</head>
+<body>
+    <script>
+        let so = parseFloat(prompt("Nhập số điện: "));
+        let soTien;
+        const BAC1 = 1.6;
+        const BAC2 = 1.7;
+        const BAC3 = 2;
+        const BAC4 = 2.5;
+        const BAC5 = 2.8;
+        if (so<51) {
+            soTien = so*BAC1;
+        } else if (so<101) {
+            soTien = 50*BAC1 + (so-50)*BAC2;
+        } else if (so<201) {
+            soTien = 50*BAC1 + 50*BAC2 + (so-100)*BAC3;
+        } else if (so<301) {
+            soTien = 50*BAC1 + 50*BAC2 + 100*BAC3 + (so-200)*BAC4;
+        } else {
+            soTien = 50*BAC1 + 50*BAC2 + 100*BAC3 + 100*BAC4 + (so-300)*BAC5;
+        }
+        document.write("Số tiền điện tiêu thụ là: " + soTien);
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tính thuế thu nhập cá nhân</title>
+</head>
+<body>
+    <script>
+        let tienThue;
+        let sumSalary=parseInt(prompt("Nhập tổng thu nhập của bạn: "));
+        const BAC1=5;
+        const BAC2=10;
+        const BAC3=15;
+        const BAC4=20;
+        if (sumSalary<=5) {
+            tienThue=sumSalary*BAC1;
+            alert("Tiền thuế phải trả: " + tienThue);
+        } else if (sumSalary<=10) {
+            tienThue=sumSalary*BAC2;
+            alert("Tiền thuế phải trả: " + tienThue);
+        } else if (sumSalary<=18) {
+            tienThue=sumSalary*BAC2;
+            alert("Tiền thuế phải trả: " + tienThue);
+        } else if (sumSalary<=32) {
+            tienThue=sumSalary*BAC3;
+            alert("Tiền thuế phải trả: " + tienThue);
+        } else {
+            tienThue=sumSalary*BAC4;
+            alert("Tiền thuế phải trả: " + tienThue);
+        }
+    </script>
+</body>
+</html>

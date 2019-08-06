@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Click chuột di chuyển quả bóng</title>
+</head>
+<body>
+    <img src="balloon.png" id="balloon" alt="balloon" height="200px" style="position:relative">
+    <input type="button" id="rightClick" value="Move right" onclick="moveRight();">
+    <input type="button" id="leftClick" value="Move left" onclick="moveLeft();">
+    <input type="button" id="upClick" value="Move up" onclick="moveUp();">
+    <input type="button" id="downClick" value="Move down" onclick="moveDown();">
+    <script>
+        let imgOjb=document.getElementById("balloon");
+        function moveRight() {
+            imgOjb.style.left=parseInt(imgOjb.style.left) + 15 + "px";
+        }
+        function moveLeft() {
+            imgOjb.style.left=parseInt(imgOjb.style.left) - 15 + "px";
+        }
+        function moveup() {
+            imgOjb.style.top=parseInt(imgOjb.style.top) - 15 + "px";
+        }
+        function moveDown() {
+            imgOjb.style.top=parseInt(imgOjb.style.top) + 15 + "px";
+        }
+
+        function move(evt) {
+            switch(evt.onclick) {
+                case moveright
+            }
+        }
+    </script>
+</body>
+</html>
+// Chưa hoàn thành

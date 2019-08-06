@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Thực hành: sự kiện chuột</title>
+</head>
+<body>
+    <img id="image" src="anh2.jpg" alt="ball" style="position:relative; left:0; height:300px">
+    <P><strong>Click the button to move the ball to the right.</strong></P>
+    <input type="button" value="Click me" onclick="moveRight();">
+    <script>
+        
+        function moveRight() {  
+            let imgObj = document.getElementById("image");
+            imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+        }
+        // window.onload=moveRight;
+    </script>
+
+    <!-- <script>
+        let imgObj = document.getElementById("image");
+        function moveRight() {  
+            imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+        }
+        window.onload=moveRight;
+    </script> -->
+</body>
+</html>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+<!-- Không nên làm cách trên vì:
+- trong một function chỉ nên thực hiện một chức năng thôi 
+- ví dụ trong function trên phải thực hiện cả chức năng khởi tạo biến imgObj và moveRight. Nên tách ra làm 2 function
+Lưu ý khác: nếu có nhiều function có khai báo biến giống nhau thì có thể khai báo biến ở bên ngoài để ngắn gọn
+và có thể dùng cho nhiều function khác nhau nữa.
+Lưu ý: ví dụ trên không thỏa mãn single responsibility principle
+Lưu ý khác: nếu trong code có HẰNG thì nên khai báo CONST-->

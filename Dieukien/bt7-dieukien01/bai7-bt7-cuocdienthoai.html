@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bài tập tính cước điện thoại</title>
+</head>
+<body>
+    <script>
+        let seconds= parseInt(prompt("Nhập vào số giây sử dụng: "));
+        let money;
+        if (seconds<=6) { 
+            money= seconds*80;
+            alert("Cước phí điện thoại là: " + money + " đồng");
+        } else {
+            money= 6*80+ (seconds-6)*13.33;
+            alert("Cước phí điện thoại là: " + money + " đồng");
+        }
+    </script>
+</body>
+</html>

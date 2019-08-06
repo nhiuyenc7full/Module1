@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hình di chuyển theo nhấn nút</title>
+</head>
+<body onload="docReady()" style="background-color:royalblue">
+    <img src="hello.gif" id="hello" alt="hello" style="position:absolute;  top:0; left:0" width="200px">
+    <script>
+        let image=document.getElementById("hello");
+        function upArrowPressed() {
+            // let image=document.getElementById("hello");
+            image.style.top=parseInt(image.style.top) - 15 + "px";
+        }
+        function downArrowPressed() {
+            // let image=document.getElementById("hello");
+            image.style.top=parseInt(image.style.top) + 15 + "px";
+        }
+        function rightArrowPressed() {
+            // let image=document.getElementById("hello");
+            image.style.left=parseInt(image.style.left) + 15 + "px";
+        }
+        function leftArrowPressed() {
+            // let image=document.getElementById("hello");
+            image.style.left=parseInt(image.style.left) - 15 + "px";
+        }
+
+        function move(evt) {
+            switch (evt.keyCode) {
+                case 38:
+                    upArrowPressed();
+                    break;
+                case 40:
+                    downArrowPressed();
+                    break;
+                case 39:
+                    rightArrowPressed();
+                    break;
+                case 37:
+                    leftArrowPressed();
+                    break;
+            }
+        }
+        function docReady() {
+            window.addEventListener('keydown', move);
+        }
+    </script>
+</body>
+</html>

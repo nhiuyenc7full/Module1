@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Giải phương trình bậc 2</title>
+</head>
+<body>
+    <script>
+        let a=parseFloat(prompt("Nhập vào a: "));
+        let b=parseFloat(prompt("Nhập vào b: "));
+        let c=parseFloat(prompt("Nhập vào c: "));
+        let x1, x2;
+        let delta=b*b-4*a*c;
+        if (a==0) {
+            x= -c/b;
+            alert("Nghiệm của phương trình là x = " + x);
+        } else {
+            if (delta<0) {
+                document.write("Phương trình vô nghiệm.");
+            } else if (delta==0) {
+                document.write("Phương trình có nghiệm x1 = x2 = " + (-b/(2*a)));
+            } else {
+                x1= ( - b + Math.sqrt(delta))/(2*a);
+                x2= ( - b - Math.sqrt(delta))/(2*a);
+                document.write("Phương trình có nghiệm là: x1 = " + x1 + " x2 = " + x2);
+            }
+        }
+
+    </script>
+</body>
+</html>

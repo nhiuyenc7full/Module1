@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Đầu Nobita bay theo nhấn nút</title>
+</head>
+<body onload="docReady()">
+    <img src="nobita.png" id="nobita" style="position : absolute; top : 0; left : 0" width="300px">
+    <script>
+        function toright() {
+            let move=document.getElementById("nobita");
+            move.style.left = parseInt(move.style.left) + 10 + 'px';
+        }
+        function toleft() {
+            let move=document.getElementById("nobita");
+            move.style.left = parseInt(move.style.left) - 10 + 'px';
+        }
+        function todown() {
+            let move=document.getElementById("nobita");
+            move.style.top = parseInt(move.style.top) + 10 + 'px';
+        }
+        function toup() {
+            let move=document.getElementById("nobita");
+            move.style.top = parseInt(move.style.top) - 10 + 'px';
+        }
+
+        function movepress(evt){
+            switch(evt.keyCode){
+                case 38:
+                    toup();
+                    break;
+                case 40:
+                    todown();
+                    break;
+                case 37:
+                    toleft();
+                    break;
+                case 39:
+                    toright();
+                    break;
+                }
+        }
+        function docReady() {
+            window.addEventListener("keydown", movepress)
+        }
+        
+    </script>
+</body>
+</html>

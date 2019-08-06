@@ -4,26 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sự kiện bàn phím</title>
+    <title>Bong bóng bay theo nhấn nút</title>
 </head>
 <body onload="docReady()">
-    <img src="anh1.png" id="heart" style="position: absolute; top:0; left:0" width="200px" height="200px">
-    <script> 
+    <img src="balloon.png" id="balloon" style="position:absolute; top:0; left:0" width="200px">
+    <script>
         function upArrowPressed(){
-            let element=document.getElementById("heart");
-            element.style.top = parseInt(element.style.top) - 5 + 'px';
+            let image=document.getElementById("balloon");
+            image.style.top=parseInt(image.style.top) - 15 + "px";
         }
         function downArrowPressed(){
-            let element=document.getElementById("heart");
-            element.style.top = parseInt(element.style.top) + 5 + 'px';
+            let image=document.getElementById("balloon");
+            image.style.top=parseInt(image.style.top) + 15 + "px";
         }
         function leftArrowPressed(){
-            let element=document.getElementById("heart");
-            element.style.left = parseInt(element.style.left) - 5 + 'px';
+            let image=document.getElementById("balloon");
+            image.style.left=parseInt(image.style.left) - 15 + "px";
         }
         function rightArrowPressed(){
-            let element=document.getElementById("heart");
-            element.style.left = parseInt(element.style.left) + 5 + 'px';
+            let image=document.getElementById("balloon");
+            image.style.left=parseInt(image.style.left) + 15 + "px";
         }
 
         function move(evt) {
@@ -31,7 +31,7 @@
                 case 38:
                     upArrowPressed();
                     break;
-                case 37: 
+                case 37:
                     leftArrowPressed();
                     break;
                 case 40:
@@ -46,6 +46,5 @@
             window.addEventListener('keydown', move);
         }
     </script>
-
 </body>
 </html>

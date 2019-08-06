@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bài tập: Do you love me?</title>
+    <style>
+        input {
+            width:55px;
+        }
+        #move {
+            position: absolute;
+        }
+    </style>
+</head>
+<body onload="docReady();">
+        <h2>Do you love me?</h2>
+        <input type="button" value="Yes" id="yes" onclick="yes();"> &ensp;
+        <input type="button" value="No" id="move" onmouseover="changePosition();">        
+    <script>
+        const CONST_WIDTH= window.innerWidth;
+        const CONST_HEIGHT= window.innerHeight;
+
+        function yes() {
+            alert("<3");
+        }
+        function changePosition() {
+            let objNo = document.getElementById("move");
+            let left = Math.floor(Math.random() * CONST_WIDTH);
+            let height = Math.floor(Math.random() * CONST_HEIGHT);
+            
+            objNo.style.left = left + "px";
+            objNo.style.top = height + "px";
+        }
+    </script>
+
+</body>
+</html>

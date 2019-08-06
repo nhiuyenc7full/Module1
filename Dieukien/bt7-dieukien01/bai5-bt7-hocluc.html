@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Xếp hạng học lực</title>
+</head>
+<body>
+    <script>
+        let test=parseFloat(prompt("Nhập vào điểm kiểm tra: "));
+        let midTest=parseFloat(prompt("Nhập vào điểm giữa kỳ: "));
+        let finalTest=parseFloat(prompt("Nhập vào điểm cuối kỳ: "));
+        let dtb;
+        dtb= (test*2 + midTest*2 + finalTest*3)/7;
+        if (dtb>=8) {
+            alert("Xếp hạng giỏi.");
+        } else if (dtb>=7.5) {
+            alert("Xếp hạng khá.");
+        } else if (dtb>=5.5) {
+            alert("Xếp hạng trung bình.");
+        } else  alert("Xếp hạng yếu.");
+
+    </script>
+</body>
+</html>

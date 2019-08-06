@@ -1,0 +1,86 @@
+  .switch {
+    position: relative;
+    display: block; 
+    width: 100px;
+    height: 40px;
+  }
+   
+  .switch input {display:none;}
+   
+  .slider {
+    position: absolute;
+    cursor: pointer; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: grey;
+    -webkit-transition: .1s;
+    transition: .1s;
+  }
+   
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 50px;
+    width: 50px;
+    left: -4px;
+    bottom: -4px;
+    background-color: rgb(255, 255, 255);
+    -webkit-transition: .1s;
+    transition: .1s;
+  }
+   
+  input:checked + .slider.good {
+    background-color: rgb(148, 224, 154);
+  }
+  
+  input:checked + .slider.fast {
+    background-color:#2599d3;
+  }
+
+  input:checked + .slider.cheap {
+    background-color: #aa5764;
+  }
+  input:focus + .slider {
+    box-shadow: 5px 5px 5px black;
+  }
+   
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(55px);
+  }
+   
+  .slider.good:before {
+    border-radius:50%;
+    background-color: rgb(35, 214, 50);
+  }
+
+  .slider.fast:before {
+    border-radius: 50%;
+    background-color: blue;
+  }
+
+  .slider.cheap:before {
+    border-radius: 50%;
+    background-color: rgb(255, 0, 64);
+  }
+  .slider.good, .slider.fast, .slider.cheap {
+    border-radius: 34px;
+  }
+   
+  div {
+      background-color: aquamarine;
+      height:500px;
+      width: 500px;
+      border: auto;
+      line-height: 50px;
+  }
+  
+  table, td {
+      background-color: lightskyblue;
+      font-size:30px;
+      padding: 40px;
+      margin: 10px;
+  }

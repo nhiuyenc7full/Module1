@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ứng dụng Game Puzzle</title>
+    <style>
+        img {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+    <img src="soc2.jpg" alt="img1" id="anh1" onclick="change(1);">
+    <img src="soc3.jpg" alt="img2" id="anh2" onclick="change(2);">
+    <img src="soc2.jpg" alt="img3" id="anh3" onclick="change(3);">
+    <script>
+        function change(2) {
+            let image = Math.floor(Math.random() *3) + 1;
+            switch (image) {
+                case 1:
+                    HTMLImageElement.src= "soc1.jpg";
+                    break;
+                case 2: 
+                    HTMLImageElement.src=="soc2.jpg";
+                    break;
+                case 3:
+                    HTMLImageElement.src=="soc3.jpg";
+                    break;
+            }
+
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tính lãi suất</title>
+</head>
+<body>
+    <script>
+        let principle = parseFloat(prompt("Nhập vào số tiền gốc: "));
+        let interestRate = parseFloat(prompt("Nhập vào lãi suất: "));
+        let month = parseInt(prompt("Nhập và số tháng gửi: "));
+        let interest = 0; //tiền lãi
+        for (let i=1; i<=month; i++) {
+            interest = interest + principle*interestRate;
+            principle= principle + interest;
+        }
+        document.write("Tiền lãi phải trả là: " + Math.ceil(interest) + " đồng.");
+    </script>
+</body>
+</html>

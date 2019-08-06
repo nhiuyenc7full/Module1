@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tính hoa hồng dựa vào doanh số bán hàng</title>
+</head>
+<body>
+    <script>
+        let sale=parseFloat(prompt("Nhập vào danh số bán hàng (triệu): "));
+        let commission; //tiền hoa hồng
+        if (sale<50) {
+            commission=sale*5/100;
+            alert("Hoa hồng là: " + hoahong + " triệu");
+        } else {
+            hoahong=sale*8/100;
+            alert("Hoa hồng là: " + hoahong + " triệu");
+        }
+    </script>
+</body>
+</html>

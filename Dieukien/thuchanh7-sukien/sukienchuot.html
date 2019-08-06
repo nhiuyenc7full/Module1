@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Thực hành: sự kiện chuột</title>
+</head>
+<body>
+    <img id="image" src="anh2.jpg" alt="ball" style="height:300px">
+    <P><strong>Click the button to move the ball to the right.</strong></P>
+    <input type="button" value="Click me" onclick="moveRight();">
+    <script>
+        let imgObj = document.getElementById("image");
+        function init() {  
+            imgObj.style.position = "relative";
+            imgObj.style.left = "0px"; 
+        }
+        function moveRight() {
+            imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+        }
+        window.onload=init;
+    </script>
+</body>
+</html>
