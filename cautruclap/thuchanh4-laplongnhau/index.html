@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vòng lặp lồng nhau</title>
+    <style>
+        table, td {
+            border-collapse: collapse;
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p id='data'></p>
+    <script>        
+        let data = "<table>"
+
+        for(let i = 1; i <= 10; i++) {
+            data += "<tr>";
+            for(let j =1 ; j<=10 ;j++) {
+                data += "<td>"+ j*i +"</td>";
+            }
+            data += "</tr>";
+        }
+        data += "</table>";
+        document.getElementById('data').innerHTML = data;
+    </script>
+</body>
+</html>

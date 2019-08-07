@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bảng cửu chương</title>
+    <style> 
+    table, td {
+        padding: 10px;
+        border: 1px solid black;
+    }
+    td {
+        width: 100px;
+    }
+    </style>
+</head>
+<body>
+    <script>
+        let data = "<table>";
+        for (let i=1; i<=10; i++) {
+            data += "<tr>";
+            for (let j=2; j<=9; j++) {
+                data += "<td>" + j + " x " + i + " = " + i*j + "</td>"; 
+            } 
+            data += "</tr>";
+        } 
+        data += "</table>";
+        document.write(data);
+    </script>
+</body>
+</html>
