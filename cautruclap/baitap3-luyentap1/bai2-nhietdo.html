@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nhập nhiệt độ</title>
+</head>
+<body>
+    <script>
+        while (true) {
+            let temper= parseInt(prompt("Enter the temperature: "));
+            if (temper>100) {
+                alert("Turn the temperatute down!");
+            } else if (temper<20) {
+                alert("Turn the temperature up!");
+            } else alert("Your computer is under the ideal temerature.");
+        }
+    </script>
+</body>
+</html>

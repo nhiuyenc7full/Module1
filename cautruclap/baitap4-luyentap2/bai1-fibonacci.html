@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>In dãy Fibonacci</title>
+    <link rel="stylesheet" href="bai1.css">
+</head>
+<body>
+    <div>
+        <h1>Bạn muốn hiển thị bao nhiêu số trong dãy Fibonacci?</h1>
+        <input type = "text" id = "fibonacci" oninput = "fibonacci();"> <br>
+        <p id="appear"></p>
+    </div>
+    <p>nhiuyenphan</p>
+    <script>
+        function fibonacci() {
+            let a = 0;
+            let b = 1;
+            let c;
+            let increa = 1;
+            let input=parseInt(document.getElementById("fibonacci").value);
+            sout = "1 ";
+            if (input==" ") {
+                document.getElementById("appear").innerHTML= "";
+            } else if (input==1) {
+                document.getElementById("appear").innerHTML= "1 ";
+            } else {
+                for (; increa < input; increa++) {
+                    c = a + b;
+                    a = b;
+                    b = c;
+                    sout += c + " ";
+                }
+                document.getElementById("appear").innerHTML= sout;
+            }    
+        }
+    </script>
+</body>
+</html>

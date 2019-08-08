@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>20 số đầu tiên trong dãy fibonacci</title>
+    <link rel="stylesheet" href="bai8.css">
+</head>
+<body>
+    <h1 id="appear">Dãy 20 số Fibonacci đầu tiên</h1>
+    <script> 
+    let a = 1;
+    let b = 1;
+    let c = null;
+    let increa = 2;
+    let sout="1 1 ";
+    do {
+        c = a + b;
+        a = b;
+        b = c;
+        sout += c + " ";
+        increa += 1;
+    }
+    while ( increa<20 );
+    document.write(sout);
+    </script>
+</body>
+</html>

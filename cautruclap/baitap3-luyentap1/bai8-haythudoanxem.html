@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hãy thử đoán xem!</title>
+    <link rel="stylesheet" href="bai8.css">
+</head>
+<body>
+    <div>
+        <h1>Trò chơi đoán số</h1>
+        <input type="button" onclick="play()" value="PLAY">
+        <h3 id="result"></h3>
+    </div>
+    <p><strong>nhiuyenphan</strong></p>
+    <script>
+        function play() { 
+            let b = Math.floor(Math.random()*10)+1;
+            let a;
+                for (let i = 1; a<=10, a>=1, i<4;i++) {
+                    let a = parseInt(prompt("Đoán số từ 1 đến 10 nhé!"));
+                    if (a<b) {
+                        alert("Số của bạn hơi bé!");
+                    } else if (a>b) {                       
+                        alert("Số của bạn hơi lớn!");
+                    } else if (a === b) {
+                        document.getElementById("result").innerHTML="Thắng rồi, " + b + " là con số may mắn.";
+                        break;
+                    } else {
+                        alert("Bạn phải nhập số vào!");
+                    }
+                    if (i==3) {
+                    document.getElementById("result").innerHTML="Hết lượt, hãy chơi lại nhé";
+                    } 
+                }
+        }
+    </script>
+</body>
+</html>

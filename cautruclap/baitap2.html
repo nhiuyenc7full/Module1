@@ -12,8 +12,9 @@
     <input type = "button" value="Hiển thị" onclick="show();">
     <p id="hienthi"></p>
     <script>
+        let sout = "";
         function check(num) {
-            for (let i=2; i<=num; i++) {
+            for (let i=2; i<num; i++) {
                 if (num%i == 0) {
                     return false;
                 } 
@@ -22,17 +23,18 @@
         }
 
         function show() {
-            let num =document.getElementById("input").value;
-            let count = 0; //đếm số nguyên tố
-            let increa = 2; //biến chạy
+            var num =parseInt(document.getElementById("input").value);
+            var count = 0; //đếm số nguyên tố
+            var increa = 2; //biến chạy
 
-            while (count<=num) {
+            while ( count<num ) {
                 if (check(increa)) {
+                    sout += increa + " ";
                     count++;
-                    document.getElementById("hienthi").innerHTML = increa;
                 }
                 increa++;
             }
+            document.getElementById("appear").innerHTML = sout;
         }
     </script>
 </body>

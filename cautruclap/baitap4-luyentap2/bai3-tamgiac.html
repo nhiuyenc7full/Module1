@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tam giác</title>
+    <style>
+        body {
+            background-color: aquamarine;
+        }
+        div {
+            text-align: right;
+            width: 400px;
+        }
+        hr {
+            
+            text-align: left;
+        }
+        body {
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let length = 5;
+        let i = 1;
+        sout = "";
+        while (i <= length && i>0) {
+            for (j = 0; j < i; j++) {
+                sout += document.write('*');
+            }
+            i++;
+            sout += document.write("<br>");
+        }
+        sout += document.write("<hr> ");
+        for (let i = 1; i<=length; i++) {
+            for (j = 5; j>=i; j--) {
+                sout += document.write("*");
+            }
+            sout += document.write("<br>");
+        } 
+        sout += document.write("<hr>");
+        for (let i = 1; i<=length; i++) {
+            for (j=5; j>=1; j--) {
+                if (j>i) {
+                    sout += document.write("&nbsp");
+                } else sout += document.write("*");
+            }
+            sout += document.write("<br>");
+        }
+        
+        sout += document.write("<hr>");
+        for (let i = 1; i<=length; i++) {
+            for (j = 5; j>=i; j--) {
+                sout += document.write("*");
+            }
+            sout += document.write("<br>");
+        } 
+
+    </script>
+    
+</body>
+</html>
