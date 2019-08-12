@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Thao tác với mảng</title>
+    <link rel = "stylesheet" href="array.css">
+</head>
+<body>
+    <div>
+        <h3>THAO TÁC VỚI MẢNG</h3>
+        <input type="text" value="" id="num">
+        <button onclick="addNum();">Add</button>
+        <button onclick="displayNum();">Display</button>
+        <hr>
+        <p id="appear"></p>
+    </div>
+    <p>nhiuyenphan</p>
+    <script>
+        let array = Array();
+        let x = 0;
+
+        function addNum() {
+            array[x] = document.getElementById("num").value;
+            if (num.value == "") {
+                alert("Bạn cần nhập phần tử vào.")
+            } else {
+                alert("Bạn vừa thêm phần tử: " + array[x]); 
+                x++;
+                document.getElementById("num").value="";                
+            }
+
+        }
+
+        function displayNum() {
+            let e = "";
+            if (array.length == 0) {
+                alert("Bạn chưa có phần tử nào cả.");
+            } else {
+                for ( let i in array) {
+                e += "Element " + i + " = " + array[i] + "<br>";
+                }
+                document.getElementById("appear").innerHTML = e;
+            }
+
+        }     
+    </script>
+</body>
+</html>

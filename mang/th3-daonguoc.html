@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Đảo ngược các phần tử</title>
+    <link rel = "stylesheet" href = "array.css"> 
+</head>
+<body>
+    <div>
+        <h3>NHẬP MẢNG VÀO</h3>
+        <input type = "text" value = "" id = "addInput"> <br>
+        <button onclick = "btnAdd()">Add</button>
+        <button onclick = "btnFinish()">Finish</button>
+        <button onclick = "btnReverse()">Reverse</button>
+    <hr>
+    <p id = "appear"></p>
+    <p id = "reverse"></p>
+    </div>
+    <p>nhiuyenphan</p>
+    
+
+    <script>
+        let array = Array();
+        let x = 0;
+        function btnAdd() {
+            let element = document.getElementById("addInput").value;
+            array[x] = element;
+            x++;
+            document.getElementById("addInput").value = "";
+        }
+        let e = "";
+        function btnFinish() {
+            for (let i in array) {
+                e += array[i] + " ";
+                document.getElementById("appear").innerHTML = "Mảng nhập vào: " + e ;
+            }
+        }
+        function btnReverse() {
+            let first = 0;
+            let last = array.length -1;
+            while (first < last) {
+                let b = array[first];
+                array[first] = array[last];
+                array[last] = b;
+                first++;
+                last--;
+            } 
+            document.getElementById("reverse").innerHTML = array + " ";
+        }
+    </script>
+</body>
+</html>

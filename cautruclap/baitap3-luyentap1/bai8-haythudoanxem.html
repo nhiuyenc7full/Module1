@@ -5,35 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hãy thử đoán xem!</title>
-    <link rel="stylesheet" href="bai8.css">
+    <link rel = "stylesheet" href = "/Module1/cautruclap/baitap4-luyentap2/bai1.css">
 </head>
 <body>
-    <div>
-        <h1>Trò chơi đoán số</h1>
-        <input type="button" onclick="play()" value="PLAY">
-        <h3 id="result"></h3>
-    </div>
-    <p><strong>nhiuyenphan</strong></p>
+    <input type="button" onclick="play()" value="PLAY">
     <script>
-        function play() { 
-            let b = Math.floor(Math.random()*10)+1;
-            let a;
-                for (let i = 1; a<=10, a>=1, i<4;i++) {
-                    let a = parseInt(prompt("Đoán số từ 1 đến 10 nhé!"));
-                    if (a<b) {
-                        alert("Số của bạn hơi bé!");
-                    } else if (a>b) {                       
-                        alert("Số của bạn hơi lớn!");
-                    } else if (a === b) {
-                        document.getElementById("result").innerHTML="Thắng rồi, " + b + " là con số may mắn.";
-                        break;
-                    } else {
-                        alert("Bạn phải nhập số vào!");
-                    }
-                    if (i==3) {
-                    document.getElementById("result").innerHTML="Hết lượt, hãy chơi lại nhé";
-                    } 
+        function play() {
+            let max = parseInt(prompt("Nhập max trong khoảng muốn chơi:"));
+            let min = parseInt(prompt("Nhập min trong khoảng bạn muốn chơi:"));
+            let random = Math.floor(Math.random()* (max - min + 1)) + min;
+            let i = 1;
+            let num;
+            while (i<4) {
+                let num = parseInt(prompt("Bạn đoán số mấy?"));
+                if (num==random) {
+                    alert("Chính xác!");
+                    break;
+                } else if (num>max || num<min) {
+                    alert("Hãy nhập trong khoảng bạn đã chọn!");
+                } else if (num<random) {
+                    alert("Hơi bé rồi!");
+                    i++;
+                } else if (num>random) {
+                    alert("Hơi lớn rồi!");
+                    i++;
+                } else {
+                    break;
                 }
+            }
+            if (i=4) {
+                alert("Game over!");
+            }
         }
     </script>
 </body>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Faking Textarea on Typing</title>
+    <link rel = 'stylesheet' href = "array.css">
+    <style>
+        textarea {
+            width: 700px;
+            height: 300px;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <h1>Bạn tên là gì?</h1>
+    <textarea placeholder = "Nhập tên của bạn..." id = "txtInput" onkeydown = 'appear()'></textarea>
+    </div>
+    <p>nhiuyenphan</p>
+    <script>
+        let str = "Tôi là Barack Hussein Obama II!...";
+        let i = 0;
+        let result ="";
+        data += "";
+        function appear() {
+            if (i<str.length) {
+                result = str[i];
+                data += result;
+                document.write(data);
+                i++;
+            } 
+            else {
+                data = "";
+                appear();
+            }
+        }
+    </script>
+</body>
+</html>

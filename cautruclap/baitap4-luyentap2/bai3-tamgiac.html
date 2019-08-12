@@ -18,6 +18,7 @@
             text-align: left;
         }
         body {
+            font-size: 138%;
             padding: 30px;
         }
     </style>
@@ -45,7 +46,7 @@
         for (let i = 1; i<=length; i++) {
             for (j=5; j>=1; j--) {
                 if (j>i) {
-                    sout += document.write("&nbsp");
+                    sout += document.write("&nbsp;&nbsp;");
                 } else sout += document.write("*");
             }
             sout += document.write("<br>");
@@ -53,8 +54,10 @@
         
         sout += document.write("<hr>");
         for (let i = 1; i<=length; i++) {
-            for (j = 5; j>=i; j--) {
-                sout += document.write("*");
+            for (j = 1; j<=length; j++) {
+                if (j>=i) {
+                    sout += document.write("*");
+                } else sout += document.write("&nbsp;&nbsp;");   
             }
             sout += document.write("<br>");
         } 

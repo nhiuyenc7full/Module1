@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ứng dụng từ điển</title>
+    <link rel="stylesheet" href="array.css">
+    <style>
+    .appear {
+        width: 700px;
+        height: 280px;
+    }
+    div {
+        color:aliceblue;
+    }
+    </style>
+</head>
+<body>
+    <div>
+    <h3>ỨNG DỤNG TỪ ĐIỂN</h3>
+    <input type="text" placeholder="Enter the word" id="enterWord">
+    <button id="search" onclick='search()'>Search</button> 
+    <hr>
+    <p id="appear"></p>
+    </div>
+    <script>
+        let english = ['name', 'love', 'heart', 'hello', 'friend', 'school'];
+        let vietnamese = ['tên', 'yêu, tình yêu', 'con tim', 'xin chào', 'bạn, bạn bè', 'trường học'];
+
+        let enterWord = document.getElementById('enterWord');
+        
+        function search() {
+            for ( i=0; i<english.length; i++ ) {
+                if (enterWord.value === english[i]) {
+                    document.getElementById("appear").innerHTML = vietnamese[i];
+                    break;
+                }
+                else if (i==english.length-1) {
+                    document.getElementById("appear").innerHTML = "Not found the word.";
+                }
+            }
+            if (enterWord.value == "") {
+                document.getElementById("appear").innerHTML = "Enter the word.";
+            }
+        }
+        
+    </script>
+</body>
+</html>

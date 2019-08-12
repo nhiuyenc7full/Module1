@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Thêm - giữa hai số chẵn</title>
+</head>
+<body style = "background-color: rgb(14, 136, 89); color: white; padding: 50px;">
+    <script>
+        let num = prompt("Nhập vào một số: ");
+        let string = num.toString();
+        result = [string[0]];
+        for ( i=1; i<(string.length); i++) {
+            if (string[i-1]%2 === 0 && string[i]%2 ===0) {
+                result.push("-",string[i]);
+            }
+            else {
+                result.push(string[i]);
+            }
+        }
+        document.write(result.join(""));
+    </script>
+</body>
+</html>

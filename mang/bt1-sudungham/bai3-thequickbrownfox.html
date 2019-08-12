@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Quick Brown Fox</title>
+</head>
+<body style = "background-color: rgb(14, 136, 89); color: white; padding: 50px;">
+    <script>
+        let string = prompt("Nhập vào một chuỗi: ");
+        let UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        let lower = "abcdefghijklmnopqrstuvwxyz";
+        let result = [];
+
+        for ( i=0; i<string.length; i++) {
+            if (UPPER.indexOf(string[i]) !== -1) {
+                result.push(string[i].toLowerCase());
+            }
+            else if (lower.indexOf(string[i] !== -1)) {
+                result.push(string[i].toUpperCase());
+            }
+            else {
+                result.push(string[i]);
+            }
+        }
+        document.write(result.join(""));
+    </script>
+</body>
+</html>
