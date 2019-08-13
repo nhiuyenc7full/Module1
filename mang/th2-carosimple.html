@@ -16,7 +16,7 @@
     </p>
     </div>
     <p>nhiuyenphan</p>
-    <script>
+    <script> 
         let board = [];
         let data = "";
 
@@ -26,6 +26,7 @@
 
         let b = document.getElementById("board");
         function appear() {
+            data = '';
             for (i=0; i<5; i++) {
                 data += '<br>';
                 for (j=0; j<5; j++) {
@@ -42,7 +43,7 @@
             let j = prompt("Nhập cột: ") -1 ;
             // alert(i + " , " + j);        // thông báo vị trí người dùng nhập
             board[i][j] = 'X';
-            data = '';
+            // data = '';
             appear();
         }
 

@@ -17,25 +17,26 @@
 <body>
     <div>
     <h1>Bạn tên là gì?</h1>
-    <textarea placeholder = "Nhập tên của bạn..." id = "txtInput" onkeydown = 'appear()'></textarea>
+    <textarea placeholder = "Nhập tên của bạn..." id = "txtInput" onkeyup = 'appear()'></textarea>
     </div>
     <p>nhiuyenphan</p>
     <script>
         let str = "Tôi là Barack Hussein Obama II!...";
         let i = 0;
         let result ="";
-        data += "";
+        let a = document.getElementById("txtInput");
         function appear() {
             if (i<str.length) {
-                result = str[i];
-                data += result;
-                document.write(data);
+                a.value="";
+                result += str[i];
                 i++;
             } 
             else {
-                data = "";
+                result = "";
+                i=0;
                 appear();
             }
+            a.value = result;
         }
     </script>
 </body>

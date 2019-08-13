@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Xóa phần tử</title>
+</head>
+<body onload="init()">
+    
+    <script>
+    let arr = [];
+    let num = parseInt(prompt("Enter the number: "));
+
+    function init() {
+        creatArray();
+
+        let index = findNumber(num,arr);
+        document.write(arr);
+        document.write("<br>");
+
+        if(index === -1) {
+            document.write(num + " khong co trong mang");
+        } else {
+            document.write("Thuc hien xoa" + num);
+            document.write("<br>");
+            arr = removeIndex(index, arr);
+            document.write(arr);
+        }
+    }
+
+    function creatArray() {
+        for (let i = 0; i < 10; i++) {
+            arr[i] = Math.floor(Math.random()*11) + 1;  
+        }
+    }
+
+    function findNumber(num, arr) {
+        // debugger;
+        for(let i = 0; i< arr.length; i++) {
+            if(num === arr[i]) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    function removeIndex(index, arr) {
+        // debugger;
+        for (let i = index; i < arr.length - 1; i++) {
+            arr[i] = arr[i+1];
+        }
+
+        arr[arr.length-1] = 0;
+
+        return arr;
+    }
+
+    
+
+    
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = [
+            [1, 2, 1, 24],
+            [8, 11, 9, 4],
+            [7, 0, 7, 27],
+            [7, 4, 28, 14],
+            [3, 10, 26, 7]
+        ]
+
+        //In cột
+        for (i = 0; i<a.length; i++) {
+            document.write("<br> row " + i );
+            for (j=0; j<a[i].length; j++) { 
+                document.write("<br>" + a[i][j]);
+            }
+        }
+
+        // In hàng
+        // for (j = 0; j <4; j++) {
+        //     document.write("<br> col " + j );
+        //     for (i=0; i<5;i++) { 
+        //         document.write("<br>" + a[i][j]);
+        //     }
+        // }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trung bình của mảng</title>
+</head>
+<body>
+    <script>
+        let arr = [3, 61, 11, -4, -3, 80, 21, -3, -7, 10];
+        let result, average;
+        let sum = arr[0];
+        for (let i = 1, max = arr[0]; i < arr.length; i++) {
+            sum += arr[i];
+            if ( arr[i] > max ) {
+                max = arr[i];
+            }
+            result = max;
+            average = sum/arr.length;
+        }
+        document.write("GTLN là: " + result + " và giá trị trung bình là: " + average);
+    </script>
+</body>
+</html>

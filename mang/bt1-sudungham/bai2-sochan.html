@@ -11,7 +11,7 @@
         let num = prompt("Nhập vào một số: ");
         let string = num.toString();
         result = [string[0]];
-        for ( i=1; i<(string.length); i++) {
+        for ( i=1; i<string.length; i++) {
             if (string[i-1]%2 === 0 && string[i]%2 ===0) {
                 result.push("-",string[i]);
             }

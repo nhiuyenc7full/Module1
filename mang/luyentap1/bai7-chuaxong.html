@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Xóa phần tử</title>
+</head>
+<body>
+    <script>
+        let num = parseInt(prompt("Enter the number: "));
+        let index;
+        let arr = new Array(10);
+        for (let i = 0; i < 10; i++) {
+            arr[i] = Math.floor(Math.random()*11) + 1;  
+        }
+        display();
+
+        function display() {
+            data = '<br>';
+            for (let i = 0; i< arr.length; i++) {
+                data += document.write(arr[i] + " ");
+            }
+            document.write(data);
+            check();
+        }
+
+        function check() {
+            for (let i = 0; i< arr.length; i++) {
+                if (num == arr[i]) {
+                    index = i; 
+                    return true;
+                }
+            }
+            alert("Không có trong mảng.")
+            return false;
+        }
+
+        if (check(index)) {
+            for (let i = index; i<arr.length; i++) {
+                arr[i] = arr[i+1];
+            }
+            arr[arr.length-1] = 0;
+            display();
+        }
+    </script>
+</body>
+</html>

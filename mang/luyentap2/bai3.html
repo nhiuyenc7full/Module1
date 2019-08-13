@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let a = prompt("Nhập vào chuỗi: ");
+        let c = a.split("");
+        
+        let b = 0;
+        document.write("Kích thước mảng: " + c.length + "<br>");
+        for ( var i in c) {
+            if (c[i]>0) {
+                b++;
+            }
+        }
+        document.write("Mảng đã nhập: [" + c + "]<br>")
+        document.write("Số phần tử số: "+ b);
+    </script>
+</body>
+</html>

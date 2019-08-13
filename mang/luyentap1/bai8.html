@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = new Array(10);
+        for (let i = 0; i < 10; i++) {
+            arr[i] = Math.floor(Math.random()*50)+1;
+        }
+        sortArr();
+
+        function sortArr() {
+            arr.sort(function(a, b) {
+                return a-b;
+                });
+            display();            
+        }
+
+        function display() {
+            
+            for (let i = 0; i < arr.length; i++) {
+                document.write(arr[i] + " ")
+            }
+        }
+    </script>
+</body>
+</html>

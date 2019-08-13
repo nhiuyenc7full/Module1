@@ -6,41 +6,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tic Tac Toe</title>
+    <link rel = "stylesheet" href = "array.css">  
     <style>
-        /* table, td, tr {
-            padding: 5px;
-            border: 1px solid black;
+        table, td, tr {
+            padding: 1px;
+            border: 0px solid black;
             border-collapse: collapse; 
-        } */
+        }
+        td {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+        }
+        button {
+            width: 50px;
+            height: 45px;
+        }
+        p {
+            margin-left: 28%;
+        }
     </style>
 </head>
 
-<body>
+<body onload = "appear()">
+    <div>
+        <input type="button" value ="TIC TAC TOE">
+        <hr>
+        <p id = "result">
+                
+        </p>
+    </div>
     <script>
         
         let array = [];
-        for (i = 0; i < 10; i++) {
+        for (i = 0; i < 7; i++) {
             array[i] = new Array(10);
-            for (j = 0; j<10; j++) {
-                array[i][j] = ['.'];
+            for (j = 0; j<7; j++) {
+                array[i][j] = ' ';
             }
+        }
+        function appear() {
+            let data = "<table>";
+            for (i = 0; i < 7; i++) {
+                data += "<tr>";
+                for (j = 0; j < 7; j++) {
+                    data += "<td><button onclick='changeValue2(" + i + "," + j + ")'>" + array[i][j] + "</button></td>";
+                }
+                data += "</tr>";
+            }
+            data += "</table>";
+            // debugger;
+            document.getElementById("result").innerHTML = data;            
+        }
+       
+        let value1 = true;
+        function changeValue2(i,j) {
+            value1 ? array[i][j] = "X" : array[i][j] = "O";
+            value1 = !value1;
+            appear();
+            checkWin(i, j);
+        }
+        function checkHang(i, j) {
+            for (a=0; a<3; a++) {
+                if ((array[i][j+a] === "X" && array[i][j-1+a] === "X" && array[i][j-2+a] === "X") ||
+                    (array[i][j+a] === "O" && array[i][j-1+a] === "O" && array[i][j-2+a] === "O")) {
+                    return true;
+                }
+            } 
+            return false;
+        }
+        
+        function checkCot(i, j) {
+            for (a=0; a<3; a++) {
+                if ((array[i-2+a][j] === "X" && array[i-1+a][j] === "X" && array[i+a][j] === "X") ||
+                    (array[i-2+a][j] === "O" && array[i-1+a][j] === "O" && array[i+a][j] === "O")) {
+                    return true;
+                }
+            } 
+            return false;
         }
 
-        
-        let data = "<table>";
-        for (i = 0; i < 10; i++) {
-            data += "<tr>"
-            for (j = 0; j < 10; j++) {
-                data += "<td>";
-                document.write(array[i][j]);
-                data += "</td>";
-                console.log(array[i][j]);
-            }
-            data += "</tr>"
+        function checkCheo1(i, j) {
+            for (a=0; a<3; a++) {
+                if ((array[i+a][j+a] === "X" && array[i-1+a][j-1+a] === "X" && array[i-2+a][j-2+a] === "X") ||
+                    (array[i+a][j+a] === "O" && array[i-1+a][j-1+a] === "O" && array[i-2+a][j-2+a] === "O")) {
+                    return true;
+                }
+            } 
+            return false;
         }
-        data += "</table>"
-       
-       
+
+        function checkCheo2(i, j) {
+            for (a=0; a<3; a++) {
+                if ((array[i-2+a][j+2-a] === "X" && array[i-1+a][j+1-a] === "X" && array[i+a][j-a] === "X") ||
+                    (array[i-2+a][j+2-a] === "O" && array[i-1+a][j+1-a] === "O" && array[i+a][j-a] === "O")) {
+                    return true;
+                }
+            } 
+            return false;
+        }
+
+        function checkWin(i, j) {
+            if (checkHang(i, j)) {
+                alert("Win");
+            }
+            if (checkCot(i, j)) {
+                alert("Win");
+            }
+            if (checkCheo1(i, j)) {
+                alert("Win");
+            }
+            if (checkCheo2(i, j)) {
+                alert("Win");
+            }
+        }
     </script>
 </body>
 
