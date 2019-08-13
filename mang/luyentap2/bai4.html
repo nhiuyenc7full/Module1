@@ -10,7 +10,8 @@
     <script>
 
         let a = prompt("Nhập vào một câu: ");
-        let c = a.split(" ");
+        let b = a.trim(); //gọt đầu đuôi
+        let c = b.split(" ");
 
         document.write("Chuỗi đã nhập: " + a + "<br>");
         document.write("Số phần tử từ: "+ c.length);
