@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let num = prompt("Nhập vào số cần kiểm tra: ");
+    check();
+    function check() {
+        if (num < 2) {
+            alert(num + " không phải là số nguyên tố.");
+        }
+        if (num == 2) {
+            alert(num + " là số nguyên tố.");
+        } 
+        if (!Number.isInteger(num)) {
+            elert("Nhập số nguyên!");
+        } 
+        if (num > 2 && Number.isInteger(num)) {
+            for (i = 2; i < num; i++) {
+                if (num % i == 0 ) {
+                    alert(num + " không phải số nguyên tố.");
+                    break;                    
+                }
+                if (i == num - 1 ) {
+                    alert(num + " là số nguyên tố.");
+                    break;  
+                }
+            }
+            break;
+        }
+                
+    }
+
+    </script>
+</body>
+</html>

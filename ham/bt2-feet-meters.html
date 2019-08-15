@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chuyển đổi feet và meters</title>
+    <style>
+    table, tr, td, th {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    td, th {
+        padding: 10px;
+    }
+    </style>
+</head>
+<body>
+    <p>Nhập số cần chuyển đổi: </p>
+    <input type="text" id = "txtInput">
+    <button onclick = "main()">Convert</button> <br><br>
+    <table>
+        <tr>
+            <th>Feet to Meters</th>
+            <th>Meters to Feet</th>
+        </tr>
+        <tr>
+            <td id = "appear1"></td>
+            <td id = "appear2"></td>
+        </tr>
+    </table>
+</body>
+    <script>
+        function main() {
+            let valueInput = document.getElementById("txtInput").value;
+
+            let result1 = convert1(valueInput);
+            let result2 = convert2(valueInput);
+
+            document.getElementById("appear1").innerHTML = result1;
+            document.getElementById("appear2").innerHTML = result2;
+
+            function convert1(foot) {
+                let meter = 0.305*foot;
+                return meter;
+            }
+            function convert2(meters) {
+                let foot = 3.279*meters;
+                return foot;
+            }
+    
+        }
+        
+
+    </script>
+</html>

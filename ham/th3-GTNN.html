@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body onload = "findMin()">
+
+    <p>Bạn muốn tìm GTNN của mảng nào?</p>
+
+    <!-- <select id = "arrInput" onchange = "findMin(this.value)">
+        <option value = "arr1" checked>arr1</option>
+        <option value = "arr2">arr2</option>
+        <option value = "arr3">arr3</option>
+        <option value = "arr4">arr4</option>
+    </select> -->
+
+    <p>Kết quả: <!--<span id = "arrName"></span> là--> <span id = "arrMin"></span></p>
+
+    <script>
+        let arr1 = [3, 5, 1, 8, -3, 7, 8];
+        let arr2 = [7, 12, 6, 9, 20, 56, 89];
+        let arr3 = [];
+        let arr4 = [0, 0, 0, 0, 0, 0];
+
+        // let arrInput = document.getElementById("arrInput").value;
+        // let result1 = findMin(arrInput);
+        let result1 = findMin(arr3);
+        document.getElementById("arrMin").innerHTML = result1;
+
+        function findMin(array) { 
+            if (array.length === 0) {
+                let min =  "Mảng không có phần tử nào!";
+                return min;
+            }
+
+            let min = array[0];
+            for (let i = 1; i < array.length; i++) {
+                if (array[i] < min) {
+                    min = array[i];
+                    continue;
+                }
+                if (i == array.length-1) return min;
+            }
+        }
+    </script>
+</body>
+</html>

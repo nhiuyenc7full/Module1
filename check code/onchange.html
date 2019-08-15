@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Onchange event</title>
+</head>
+<body>
+    <p>Bạn thích sống ở đâu?</p>
+    <select name="checkk" id="checkselect" onchange="discribe()">
+        <option>Hàn Quốc</option>
+        <option selected>Nhật Bản</option>
+        <option>Hoa Kỳ</option>
+        <option>Việt Nam</option>
+    </select>
+    <p id = "appear"></p>
+    <script>
+        function discribe() {
+            let x = document.getElementById("checkselect").value;
+            document.getElementById("appear").innerHTML = "Bạn thích sống ở " + x;
+        }
+    
+        // Muốn in được dòng "Bạn thích sống ở Việt Nam" thì phải tạo biến x lấy value
+        // từ id ở select xuống riêng, rồi mới in ra riêng
+
+
+    </script>
+</body>
+</html>

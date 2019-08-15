@@ -8,7 +8,27 @@
 </head>
 <body>
     <script>
-       
+
+        data = "";
+        for (let i = 0; i < 15; i++) {
+            data += " * ";
+        }
+
+        data += "<br>";
+        for( let j = 0; j < 5; j++ ) {
+            for (let i = 0; i <15; i++) {
+                if (i == 0 || i == 14) data += "* ";
+                else data += '&nbsp;&nbsp;&nbsp;';
+            }
+            data += "<br>";
+        }
+        
+        for (let i = 0; i < 15; i++) {
+            data += " * ";
+        }
+        data += "<br>";
+
+        document.write(data);
     </script>
 </body>
 </html>

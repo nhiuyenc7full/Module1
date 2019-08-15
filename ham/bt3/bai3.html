@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num1 = +prompt("Nhập vào số thứ nhất:");
+        let num2 = +prompt("Nhập vào số thứ hai:");
+        alert(checkNum(num1, num2));
+        function checkNum(num1, num2) {
+            if (num1 > num2) {
+                let status = "Số thứ nhất lớn hơn số thứ hai.";
+                return status;
+            } 
+            else {
+                let sum = num1 + num2;
+                return sum;
+            }
+        }
+
+    </script>
+</body>
+</html>

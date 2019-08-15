@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num = +prompt("Nhập vào một số: ");
+        alert(check(num));
+
+        function check(a) {
+            if (Number.isInteger(a)) {
+                if (a>0) return true;
+                else if (a<0) return false;
+                else return "Nhập lại!";
+            }
+            else return "Nhập lại!";  
+        }
+    
+    </script>
+</body>
+</html>

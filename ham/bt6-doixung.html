@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = 'abc212cba';
+
+
+        isPalindrome(0, str.length-1);
+
+
+        if (isPalindrome(0, str.length-1)) {
+            alert("Đối xứng");
+        } else alert("Không đối xứng");
+
+
+        function isPalindrome(first, last) {
+            if (first>last) {
+                return true;
+            }
+            if (str[first] === str[last]) {
+                    return isPalindrome(first + 1, last - 1);                
+            }
+            else {
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
