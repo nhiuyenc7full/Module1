@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let student = {
+        name: "uyen",
+        age: 24,
+        gender: true,
+        interest: ["reading", "singing", "travelling"],
+
+        getGender: function() {
+          if (this.gender) return alert("male");
+          else return alert("female");
+        }
+      };
+      // student.act();
+      //    document.write(student.age);
+      student.getGender();
+      //
+      // act: function() {
+      //         alert(this.name + ' is ' + this.age + ' years old. She is ' + getGender() +
+      //          ' and she like ' + this.interest[1] + ', ' + this.interest[2] + ' and ' + this.interest[3]);
+      //     },
+    </script>
+  </body>
+</html>

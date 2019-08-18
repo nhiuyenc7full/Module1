@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="bt3.css" />
+  </head>
+  <body>
+    <div id="div1">
+      <div id="div2">
+        <div id="div3">
+          <button>Write</button>
+          <button>Send</button>
+          <button>On/Off</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function Mobile(battery, type, status) {
+        this.battery = battery;
+        this.type = type;
+        this.status = status;
+
+        this.message = {
+          writing: [],
+          received: [],
+          sent: []
+        };
+
+        this.checkStatus = function() {
+          if (this.status) return true;
+          return false;
+        };
+
+        // return this.status ? true: false; giống với câu lệnh if trên
+
+        this.onOff = function() {
+          this.status = !this.status;
+        };
+        this.chargeBattery = function() {
+          this.battery = 100;
+        };
+        this.sendMessage = function(message) {
+          if (!this.checkStatus() || this.battery == 0) return;
+          this.message.sent.push(message);
+          this.battery--;
+        };
+        this.receiveMessage = function(message) {
+          if (!this.checkStatus() || this.battery == 0) return;
+          this.message.received.push(message);
+          this.battery--;
+        };
+        this.readMesRec = function(index) {
+          if (!this.checkStatus() || this.battery == 0) return;
+          return this.message.received[index];
+          this.battery--;
+        };
+        this.readMesSend = function(index) {
+          if (!this.checkStatus() || this.battery == 0) return;
+          return this.message.sent[index];
+          this.battery--;
+        };
+      }
+      let nokia = new Mobile(50, "Nokia", true);
+      let iphone = new Mobile(70, "iPhone", true);
+
+      console.log(nokia.checkStatus());
+
+      iphone.chargeBattery();
+      console.log(iphone.battery);
+
+      let mess = "alo";
+      iphone.sendMessage(mess);
+      nokia.receiveMessage(mess);
+      console.log(nokia.readMesRec(0));
+    </script>
+  </body>
+</html>

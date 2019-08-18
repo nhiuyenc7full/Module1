@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="switchButton.switchOn()">Switch On</button>
+    <button onclick="switchButton.switchOff()">Switch Off</button>
+    <img
+      src="lampOff.png"
+      alt="Lamp Off"
+      id="onOff"
+      width="300px"
+      height="400px"
+    />
+    <script>
+      class SwitchButton {
+        constructor() {
+          this.status = false;
+        }
+        connectToLamp(ElectricLamp) {
+          this.lamp = ElectricLamp;
+        }
+        switchOff() {
+          this.status = false;
+          this.lamp.turnOff();
+        }
+        switchOn() {
+          this.status = true;
+          this.lamp.turnOn();
+        }
+      }
+
+      class ElectricLamp {
+        constructor(id) {
+          this.status = false;
+          this.id = document.getElementById(id);
+        }
+        turnOff() {
+          this.id.setAttribute("src", "lampOff.png");
+          this.id.setAttribute("alt", "Lamp Off");
+          return (this.status = false);
+        }
+        turnOn() {
+          this.id.setAttribute("src", "lampOn.png");
+          this.id.setAttribute("alt", "Lamp On");
+          return (this.status = true);
+        }
+      }
+
+      let electricLamp = new ElectricLamp("onOff");
+      let switchButton = new SwitchButton();
+
+      switchButton.connectToLamp(electricLamp);
+    </script>
+  </body>
+</html>

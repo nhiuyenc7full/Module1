@@ -1,0 +1,24 @@
+#div1 {
+  border: 1px solid black;
+  background-color: black;
+  border-radius: 20px;
+  width: 300px;
+  height: 600px;
+}
+#div2 {
+  border: 1px solid black;
+  background-color: azure;
+  margin: auto;
+  padding: 10px;
+  border-radius: 20px;
+  width: 250px;
+  height: 500px;
+  text-align: bottom;
+}
+#div3 {
+  border: 0px solid black;
+  margin: bottom;
+}
+button {
+  border-radius: 5px;
+}
