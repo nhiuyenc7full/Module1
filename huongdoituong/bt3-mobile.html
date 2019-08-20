@@ -8,12 +8,22 @@
     <link rel="stylesheet" href="bt3.css" />
   </head>
   <body>
-    <div id="div1">
-      <div id="div2">
-        <div id="div3">
-          <button>Write</button>
-          <button>Send</button>
-          <button>On/Off</button>
+    <div id="divNokia1">
+      <div id="divNokia2">
+        <div id="divNokia3">
+          <button id="writeN">Write</button>
+          <button id="sendN">Send</button>
+          <button id="onOffN">On/Off</button>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div id="divIphone1">
+      <div id="divIphone2">
+        <div id="divIphone3">
+          <button id="writeI">Write</button>
+          <button id="sendI">Send</button>
+          <button id="onOffI">On/Off</button>
         </div>
       </div>
     </div>
@@ -34,9 +44,6 @@
           if (this.status) return true;
           return false;
         };
-
-        // return this.status ? true: false; giống với câu lệnh if trên
-
         this.onOff = function() {
           this.status = !this.status;
         };
@@ -55,13 +62,13 @@
         };
         this.readMesRec = function(index) {
           if (!this.checkStatus() || this.battery == 0) return;
-          return this.message.received[index];
           this.battery--;
+          return this.message.received[index];
         };
         this.readMesSend = function(index) {
           if (!this.checkStatus() || this.battery == 0) return;
-          return this.message.sent[index];
           this.battery--;
+          return this.message.sent[index];
         };
       }
       let nokia = new Mobile(50, "Nokia", true);

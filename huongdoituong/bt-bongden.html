@@ -20,17 +20,27 @@
       class SwitchButton {
         constructor() {
           this.status = false;
+          this.lamp = null;
         }
+
         connectToLamp(ElectricLamp) {
           this.lamp = ElectricLamp;
         }
+
         switchOff() {
-          this.status = false;
-          this.lamp.turnOff();
+          if (this.lamp != null) {
+            this.status = false;
+            this.lamp.turnOff();
+          } else {
+            return console.log("Chưa kết nối.");
+          }
         }
+
         switchOn() {
-          this.status = true;
-          this.lamp.turnOn();
+          if (this.lamp != null) {
+            this.status = true;
+            this.lamp.turnOn();
+          } else return console.log("Chưa kết nối.");
         }
       }
 
@@ -39,11 +49,13 @@
           this.status = false;
           this.id = document.getElementById(id);
         }
+
         turnOff() {
           this.id.setAttribute("src", "lampOff.png");
           this.id.setAttribute("alt", "Lamp Off");
           return (this.status = false);
         }
+
         turnOn() {
           this.id.setAttribute("src", "lampOn.png");
           this.id.setAttribute("alt", "Lamp On");

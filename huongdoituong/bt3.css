@@ -1,11 +1,13 @@
-#div1 {
+#divNokia1,
+#divIphone1 {
   border: 1px solid black;
   background-color: black;
   border-radius: 20px;
   width: 300px;
   height: 600px;
 }
-#div2 {
+#divNokia2,
+#divIphone2 {
   border: 1px solid black;
   background-color: azure;
   margin: auto;
@@ -15,7 +17,8 @@
   height: 500px;
   text-align: bottom;
 }
-#div3 {
+#divNokia3,
+#divIphone3 {
   border: 0px solid black;
   margin: bottom;
 }

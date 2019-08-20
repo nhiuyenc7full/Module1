@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <canvas
+      id="myCanvas"
+      width="300px"
+      height="500px"
+      style="border: 1px solid black"
+    ></canvas>
+  </head>
+  <body>
+    <script>
+      const csv = document.getElementById("myCanvas");
+      const ctx = csv.getContext("2d");
+
+      function drawReact(x, y) {
+        ctx.fillStyle = "blue";
+        ctx.fillRect(x, y, width, height);
+      }
+      let y = 50;
+      let x = 50;
+      const width = 50;
+      const height = 50;
+
+      function update() {
+        if (x < csv.width - 50) {
+          x += 2;
+        }
+        if (x >= csv.width - 50) {
+          x -= 2;
+        }
+        if (y < csv.height - 50) {
+          y += 2;
+        }
+        // if (y >= csv.height - 50) {
+        //   y -= 2;
+        // }
+      }
+      function loop() {
+        ctx.clearRect(0, 0, csv.width, csv.height);
+        update();
+        drawReact(x, y);
+        setTimeout(loop, 10);
+      }
+
+      setTimeout(loop, 10);
+      clearTimeout(loop);
+    </script>
+  </body>
+</html>

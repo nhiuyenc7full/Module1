@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Mouse {
+        constructor(name, weight, speed, status) {
+          this.name = name;
+          this.weight = weight;
+          this.speed = speed;
+          this.status = status;
+        }
+        say() {
+          return "chit chit";
+        }
+      }
+
+      class Cat {
+        constructor(name, weight, speed) {
+          this.name = name;
+          this.weight = weight;
+          this.speed = speed;
+        }
+        say() {
+          return "meo meo";
+        }
+        getMouse(mouse) {
+          if (this.speed > mouse.speed) {
+            return "Bắt được chuột.";
+          } else return "Không bắt được chuột.";
+        }
+        getWeight() {
+          return this.weight;
+        }
+
+        eatMouse(mouse) {
+          if (mouse.status) {
+            this.weight += mouse.weight;
+            mouse.status = false;
+          } else return;
+        }
+      }
+
+      let mouse1 = new Mouse("Rat", 1, 9, true);
+      let cat1 = new Cat("Cat", 4, 10);
+
+      console.log(cat1.name);
+      console.log(cat1.speed);
+      console.log(mouse1.name);
+      console.log(mouse1.speed);
+      console.log(mouse1.status);
+
+      let kq = cat1.getMouse(mouse1);
+      console.log(kq);
+
+      cat1.eatMouse(mouse1);
+      console.log(cat1.getWeight());
+    </script>
+  </body>
+</html>
