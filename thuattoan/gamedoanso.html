@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let nums = [];
+      let secrectNum = parseInt(prompt("Nhập vào số bí mật (từ 1 - 100): "));
+      for (let i = 0; i < 100; i++) {
+        nums[i] = Math.floor(Math.random() * 100) + 1;
+      }
+
+      nums = nums.sort(function(a, b) {
+        return a - b;
+      });
+      function dispArr(nums) {
+        for (var i = 0; i < nums.length; i++) {
+          document.write(nums[i] + " ");
+          if (i % 10 == 9) {
+            document.write("<br>");
+          }
+        }
+        if (i % 10 != 0) {
+          document.write("<br>");
+        }
+      }
+
+      function binSearch(arr, x) {
+        let lowerBound = 0;
+        let upperBound = arr.length - 1;
+        let midPoint = Math.floor(lowerBound + (upperBound - lowerBound) / 2);
+        let count = 1;
+        document.write("Số lần kiểm tra là: <br> ");
+        while (upperBound >= lowerBound) {
+          document.write(count + " ");
+          count++;
+          midPoint = Math.floor(lowerBound + (upperBound - lowerBound) / 2);
+          if (arr[midPoint] == x)
+            return document.write(x + " được tìm thấy ở index " + midPoint);
+          if (arr[midPoint] < x) lowerBound = midPoint + 1;
+          if (arr[midPoint] > x) upperBound = midPoint - 1;
+          document.write(
+            "mid: " +
+              midPoint +
+              "; low: " +
+              lowerBound +
+              "; upper: " +
+              upperBound +
+              "<br>"
+          );
+        }
+
+        return document.write("Không tìm thấy " + x);
+      }
+      function linSearch(arr, x) {
+        let count = 0;
+        document.write("Số lần kiểm tra là: <br>");
+        for (let i = 0; i < 100; i++) {
+          document.write(count + "<br>");
+          count++;
+          if (arr[i] == x) {
+            return document.write(x + " được tìm thấy ở index " + i);
+          }
+        }
+        return document.write("Không tìm thấy " + x);
+      }
+      function addZero(i) {
+        if (i < 10) {
+          i = "0" + i;
+        }
+        return i;
+      }
+      function getTime() {
+        let d = new Date();
+        let h = addZero(d.getHours());
+        let m = addZero(d.getMinutes());
+        let s = addZero(d.getSeconds());
+        let mls = addZero(d.getMilliseconds());
+        return document.write(h + ": " + m + ": " + s + ": " + mls);
+      }
+
+      dispArr(nums);
+      document.write("<br>");
+      getTime();
+      document.write("<br>");
+      binSearch(nums, secrectNum);
+      document.write("<br><br>");
+      getTime();
+      document.write("<br>");
+      linSearch(nums, secrectNum);
+      document.write("<br>");
+      getTime();
+    </script>
+  </body>
+</html>

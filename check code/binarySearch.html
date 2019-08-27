@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Tìm chỉ số của phân tử 12 trong mảng arr;
+      let arr = [1, 5, 10, 13, 16, 19, 21, 30, 35, 37, 40, 55, 60];
+      let x = 19;
+
+      function find(arr, x) {
+        let lowerBound = 0;
+        let upperBound = arr.length - 1;
+        let midPoint = Math.floor((upperBound + lowerBound) / 2);
+        while (upperBound >= lowerBound) {
+          midPoint = Math.floor((upperBound + lowerBound) / 2);
+          if (arr[midPoint] == x)
+            return alert(x + " được tìm thấy ở index " + midPoint);
+          if (arr[midPoint] < x) lowerBound = midPoint + 1;
+          if (arr[midPoint] > x) upperBound = midPoint - 1;
+        }
+
+        return alert("Không tìm thấy " + x);
+      }
+
+      find(arr, x);
+
+      // let lowerBound = 0;
+      // let upperBound = arr.length - 1;
+      // function find() {
+      //   if (upperBound < lowerBound) {
+      //     return alert("Không tìm thấy " + x);
+      //   }
+      //   let midPoint = Math.floor(lowerBound + (upperBound - lowerBound) / 2);
+      //   if (arr[midPoint] == x)
+      //     return alert(x + " được tìm thấy ở index " + midPoint);
+      //   if (arr[midPoint] < x) lowerBound = midPoint + 1;
+      //   if (arr[midPoint] > x) upperBound = midPoint - 1;
+      //   return find();
+      // }
+      // find();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let viettel = [
+        "0863456789",
+        "0967876543",
+        "0326756391",
+        "0335678912",
+        "0458909876",
+        "0366754321"
+      ];
+      let regexp = /^0(3[2-9]{1}[0-9]{7}|9[6-8]{1}[0-9]{7}|86[0-9]{7})$/;
+      for (let i = 0; i < viettel.length; i++) {
+        if (regexp.test(viettel[i])) console.log(viettel[i] + "<br>");
+      }
+    </script>
+  </body>
+</html>

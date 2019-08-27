@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let nums = [];
+      for (let i = 0; i < 100; i++) {
+        nums[i] = Math.round(Math.random() * 100);
+      }
+
+      function dispArr(nums) {
+        for (var i = 0; i < nums.length; i++) {
+          document.write(nums[i] + " ");
+          if (i % 10 == 9) {
+            document.write("<br>");
+          }
+        }
+        if (i % 10 != 0) {
+          document.write("<br>");
+        }
+      }
+
+      function binSearch(arr, x) {
+        let lowerBound = 0;
+        let upperBound = arr.length - 1;
+        let midPoint = Math.floor((upperBound + lowerBound) / 2);
+        while (upperBound > lowerBound) {
+          midPoint = Math.floor((upperBound + lowerBound) / 2);
+          if (arr[midPoint] == x) return midPoint;
+          if (arr[midPoint] < x) lowerBound = midPoint + 1;
+          if (arr[midPoint] > x) upperBound = midPoint - 1;
+        }
+
+        return -1;
+      }
+
+      function count(nums, data) {
+        let count = 0;
+        let position = binSearch(nums, data);
+        if (position > -1) {
+          ++count;
+          for (var i = position - 1; i > 0; --i) {
+            if (nums[i] == data) {
+              ++count;
+            } else {
+              break;
+            }
+          }
+
+          for (var i = position + 1; i < nums.length; ++i) {
+            if (nums[i] == data) {
+              ++count;
+            } else {
+              break;
+            }
+          }
+        } //end if
+        return count;
+      }
+
+      nums = nums.sort(function(a, b) {
+        return a - b;
+      });
+      dispArr(nums);
+      document.write("<br>");
+      let val = parseInt(prompt("Nhập vào số cần tìm: "));
+      document.write("Giá trị cần tìm là: " + val);
+      document.write("<br>");
+      document.write("Tìm thấy " + val + " " + count(nums, val) + " lần.");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Find Min Max</title>
+  </head>
+  <body>
+    <script>
+      let nums = [];
+      for (let i = 0; i < 100; i++) {
+        nums[i] = Math.round(Math.random() * 100);
+      }
+
+      function findMin(nums) {
+        let min = nums[0];
+        for (let i = 1; i < nums.length; i++) {
+          if (nums[i] < min) {
+            min = nums[i];
+          }
+        }
+        return min;
+      }
+
+      function findMax(nums) {
+        let max = nums[0];
+        for (let i = 1; i < nums.length; i++) {
+          if (nums[i] > max) {
+            max = nums[i];
+          }
+        }
+        return max;
+      }
+
+      function dispArr(nums) {
+        for (var i = 0; i < nums.length; i++) {
+          document.write(nums[i] + " ");
+          if (i % 10 == 9) {
+            document.write("<br>");
+          }
+        }
+        if (i % 10 != 0) {
+          document.write("<br>");
+        }
+      }
+
+      dispArr(nums);
+      document.write("<br>");
+      document.write("Min của mảng là: " + findMin(nums));
+      document.write("<br>");
+      document.write("Max của mảng là: " + findMax(nums));
+    </script>
+  </body>
+</html>

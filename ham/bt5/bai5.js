@@ -37,7 +37,7 @@ function edit(x) {
   }
 }
 
-function display(x) {
+function display(product) {
   let text = "";
   for (let i = 0; i < product.length; i++) {
     text += "<tr>";

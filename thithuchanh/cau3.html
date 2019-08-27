@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function enterYear() {
+        let year = parseInt(prompt("Nhập năm bạn muốn kiểm tra"));
+        if (year < 0 || isNaN(year)) {
+          alert("Nhập lại năm phải là số nguyên > 0");
+          enterYear();
+        } else checkLeapYear(year);
+      }
+
+      function isLeapYear(year) {
+        if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+          return true;
+        }
+        return false;
+      }
+
+      function checkLeapYear(year) {
+        if (isLeapYear(year)) document.write(year + " is a leap year.");
+        else document.write(year + " is not a leap year.");
+      }
+
+      enterYear();
+    </script>
+  </body>
+</html>

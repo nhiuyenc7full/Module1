@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let score = [];
+
+      function enterScore(length) {
+        for (let i = 0; i < length; i++) {
+          score[i] = parseInt(prompt("Nhập vào điểm: "));
+          if (isNaN(score[i])) {
+            alert("Bạn vừa nhập một rỗng, nhập lại từ đầu.");
+            enterScore(length);
+          }
+        }
+      }
+
+      function enterLength() {
+        let length = parseInt(prompt("Nhập vào chiều dài danh sách: "));
+        if (length > 0) enterScore(length);
+        else {
+          alert("Nhập lại chiều dài mảng > 0: ");
+          enterLength();
+        }
+      }
+
+      function findMaxScore(score) {
+        let max = score[0];
+        for (let i = 1; i < score.length; i++) {
+          if (max < score[i]) max = score[i];
+        }
+        return max;
+      }
+
+      enterLength();
+      let result = findMaxScore(score);
+      document.write("Điểm cao nhất là: " + result);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // let arr = [1, 5, 10, 3, 9, 9, 9, 2, 2, 8, 11, 10];
+      let arr = [5];
+      // let arr = [];
+      let index = 0;
+      function lastSecondMax(arr) {
+        let max1 = arr[0];
+        let max2 = arr[0];
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] > max1) {
+            max2 = max1;
+            max1 = arr[i];
+          } else if (arr[i] > max2) {
+            max2 = arr[i];
+          }
+        }
+
+        if (max1 == max2) {
+          return -1;
+        } else {
+          return max2;
+        }
+      }
+      function checkArr(arr) {
+        if (arr.length > 1) {
+          alert(lastSecondMax(arr));
+        } else if (arr.length === 1) {
+          alert("Mảng có 1 phần tử.");
+        } else alert("Mảng rỗng.");
+      }
+      checkArr(arr);
+    </script>
+  </body>
+</html>

@@ -10,17 +10,16 @@
       width="500px"
       height="500px"
       style="border: 1px solid black"
-    ></canvas>
+    >
+    </canvas>
   </head>
   <body>
     <script>
       let c = document.getElementById("myCanvas");
-      let ctx = c.getContext("2d");
+      let t = c.getContext("2d");
       let img = new Image();
       img.src = "star1.png";
-      img.onload = function() {
-        ctx.drawImage(img, 10, 10, 60, 60);
-      };
+      t.drawImage(img, 0, 0, 200, 200);
     </script>
   </body>
 </html>

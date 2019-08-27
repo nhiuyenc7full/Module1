@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = [];
+
+      function enterIndex(arr) {
+        let index = parseInt(
+          prompt("Nhập vào chỉ số index của phần tử bạn muốn thay thế:")
+        );
+
+        if (index < 0) {
+          display(arr);
+        } else tryRemoveFromArray(index, arr);
+      }
+
+      function enterLength() {
+        let length = parseInt(prompt("Nhập vào độ dài mảng: "));
+        if (length < 0) {
+          alert("Chiều dài mảng phải > = 0");
+          enterLength();
+        }
+        arr.length = length;
+        enterElement(arr);
+        display(arr);
+        enterIndex(arr);
+      }
+
+      function enterElement(arr) {
+        for (let i = 0; i < arr.length; i++) {
+          arr[i] = parseInt(prompt("Nhập vào phần tử của mảng: "));
+        }
+      }
+      function display(arr) {
+        for (let i = 0; i < arr.length; i++) {
+          document.write(arr[i] + " ");
+        }
+        document.write("<br>");
+      }
+      function tryRemoveFromArray(index, arr) {
+        let newArray = [];
+        for (let i = 0; i < index; i++) {
+          newArray[i] = arr[i];
+        }
+        for (let i = index; i < arr.length - 1; i++) {
+          newArray[i] = arr[i + 1];
+        }
+
+        display(newArray);
+      }
+      enterLength();
+      // display(arr);
+      // enterIndex();
+    </script>
+  </body>
+</html>

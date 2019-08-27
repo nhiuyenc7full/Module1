@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let nums = [];
+      let secrectNum = parseInt(prompt("Nhập vào số bí mật (từ 1 - 100): "));
+
+      for (let i = 0; i < 100; i++) {
+        nums[i] = Math.floor(Math.random() * 100) + 1;
+      }
+      nums = nums.sort(function(a, b) {
+        return a - b;
+      });
+
+      function checkNum(nums, secrectNum) {
+        for (let i = 0; i < 100; i++) {
+          if (nums[i] == secrectNum) return true;
+        }
+        return false;
+      }
+
+      function guessNum(nums, secrectNum) {
+        if (checkNum(nums, secrectNum)) {
+          let lowerBound = 0;
+          let upperBound = nums.length - 1;
+          let midPoint = Math.floor((upperBound + lowerBound) / 2);
+          let arrCount = [
+            "First",
+            "Second",
+            "Third",
+            "Fourth",
+            "Fifth",
+            "Sixth",
+            "Seventh"
+          ];
+          let count = 0;
+
+          while (upperBound > lowerBound) {
+            midPoint = Math.floor((upperBound + lowerBound) / 2);
+
+            if (nums[midPoint] == secrectNum) {
+              getTime();
+              document.write("<br>");
+              document.write(
+                arrCount[count] +
+                  " guess: " +
+                  nums[midPoint] +
+                  "; Answer: correct"
+              );
+              return;
+            }
+            if (nums[midPoint] < secrectNum) {
+              lowerBound = midPoint + 1;
+              getTime();
+              document.write("<br>");
+              document.write(
+                arrCount[count] +
+                  " guess: " +
+                  nums[midPoint] +
+                  "; Answer: too low <br>"
+              );
+              count++;
+            }
+            if (nums[midPoint] > secrectNum) {
+              upperBound = midPoint - 1;
+              getTime();
+              document.write("<br>");
+              document.write(
+                arrCount[count] +
+                  " guess: " +
+                  nums[midPoint] +
+                  "; Answer: too high <br>"
+              );
+              count++;
+            }
+          }
+        } else {
+          getTime();
+          document.write("<br>");
+          return document.write(
+            "Không tồn tại số " + secrectNum + " trong mảng."
+          );
+        }
+      }
+
+      function addZero(i) {
+        if (i < 10) {
+          i = "0" + i;
+        }
+        return i;
+      }
+      function getTime() {
+        let d = new Date();
+        let h = addZero(d.getHours());
+        let m = addZero(d.getMinutes());
+        let s = addZero(d.getSeconds());
+        let mls = addZero(d.getMilliseconds());
+        return document.write(h + ": " + m + ": " + s + ": " + mls);
+      }
+
+      document.write("Guessing game secret number is " + secrectNum + "<br>");
+      guessNum(nums, secrectNum);
+    </script>
+  </body>
+</html>
